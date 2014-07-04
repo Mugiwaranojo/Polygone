@@ -12,8 +12,6 @@
 
 @interface PolygoneView : UIView
 
--(void)setPolygone:(Polygone *) value;
--(Polygone *) polygone;
-
+@property (strong, nonatomic) Polygone *model;
 
 @end

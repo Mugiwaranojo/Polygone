@@ -10,39 +10,41 @@
 #import "Polygone.h"
 
 @implementation PolygoneView
-{
-    Polygone * _polygone;
-}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _polygone = [[Polygone alloc] init];
+        
     }
     return self;
-}
-
--(void)setPolygone:(Polygone *)value
-{
-    _polygone = value;
-}
-
--(Polygone *) polygone
-{
-    return _polygone;
 }
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    int nX= rect.size.width/2, nY= rect.size.height/2, r= MIN(nX, nY);
+    int nbSides= [self.model numberOfSide];
+    
     // Drawing code
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextBeginPath(ctx);
-    CGFloat x=10, y=10;
-    CGContextMoveToPoint(ctx, x, y);
     
+    for(int i=1; i<=nbSides; i++)
+    {
+        CGFloat x=r*cos(2*M_PI*i/nbSides)+nX,
+                y=r*sin(2*M_PI*i/nbSides)+nY;
+        if(i==1)CGContextMoveToPoint(ctx, x, y);
+        else CGContextAddLineToPoint(ctx, x, y);
+    }
+    
+    CGContextClosePath(ctx);
+    UIColor *color =   [UIColor blueColor];
+    CGContextSetFillColorWithColor(ctx, color.CGColor);
+    CGContextSetStrokeColorWithColor(ctx, color.CGColor);
+    CGContextDrawPath(ctx, kCGPathFillStroke);
 }
 
 @end

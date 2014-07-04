@@ -10,32 +10,37 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *polygoneTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *polygoneSidesLabel;
+@property (weak, nonatomic) IBOutlet PolygoneView *polygoneView;
+
+
+
 @end
 
 @implementation ViewController
-{
-     PolygoneView * _polygoneView;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _polygoneView = [[PolygoneView alloc] init];
+    self.polygoneView.model= [[Polygone alloc] init];
+    [self refresh];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 - (IBAction)changeNumberOfside:(UISlider *)sender {
-    Polygone *p = [_polygoneView polygone];
     int valueSelected= (int) sender.value;
-    [p setNumberOfSide: valueSelected];
-    printf("numberOfSide : %d ;", [p numberOfSide]);
-    NSString *tmpName=[p name];
-    printf("name : %s\n", [tmpName UTF8String]);
+    [self.polygoneView.model setNumberOfSide: valueSelected];
+    [self refresh];
+}
+
+- (void) refresh
+{
+    self.polygoneTitleLabel.text= [self.polygoneView.model name];
+    self.polygoneSidesLabel.text= [NSString stringWithFormat:@"Polygone à %d côtés", [self.polygoneView.model numberOfSide]];
+    [self.polygoneView setNeedsDisplay];
 }
 
 @end
