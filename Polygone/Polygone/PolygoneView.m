@@ -9,6 +9,8 @@
 #import "PolygoneView.h"
 #import "Polygone.h"
 
+#include "stdlib.h"
+
 @implementation PolygoneView
 
 
@@ -25,7 +27,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    int nX= rect.size.width/2, nY= rect.size.height/2, r= MIN(nX, nY);
+    int nX= rect.size.width/2, nY= rect.size.height/2, r= MIN(nX, nY)-10;
     int nbSides= [self.model numberOfSide];
     
     // Drawing code
@@ -41,7 +43,22 @@
     }
     
     CGContextClosePath(ctx);
-    UIColor *color =   [UIColor blueColor];
+    int randomColor= rand()%4;
+    UIColor *color;
+    switch (randomColor) {
+        case 1:
+            color =[UIColor blueColor];
+            break;
+        case 2:
+            color =[UIColor redColor];
+            break;
+        case 3:
+            color =[UIColor yellowColor];
+            break;
+        default:
+            color =[UIColor greenColor];
+            break;
+    }
     CGContextSetFillColorWithColor(ctx, color.CGColor);
     CGContextSetStrokeColorWithColor(ctx, color.CGColor);
     CGContextDrawPath(ctx, kCGPathFillStroke);
