@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PolygoneView.h"
 
 @interface ViewController : UIViewController
 

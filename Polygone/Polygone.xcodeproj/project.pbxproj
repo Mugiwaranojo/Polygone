@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A809C081965A051009619C5 /* Polygone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A809C071965A051009619C5 /* Polygone.m */; };
+		6AB3D79D19668F060006FB4B /* PolygoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3D79C19668F060006FB4B /* PolygoneView.m */; };
 		6AB860CB1965542A00E003D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB860CA1965542A00E003D3 /* Foundation.framework */; };
 		6AB860CD1965542A00E003D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB860CC1965542A00E003D3 /* CoreGraphics.framework */; };
 		6AB860CF1965542A00E003D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB860CE1965542A00E003D3 /* UIKit.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A809C061965A051009619C5 /* Polygone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygone.h; sourceTree = "<group>"; };
+		6A809C071965A051009619C5 /* Polygone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polygone.m; sourceTree = "<group>"; };
+		6AB3D79B19668F060006FB4B /* PolygoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygoneView.h; sourceTree = "<group>"; };
+		6AB3D79C19668F060006FB4B /* PolygoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygoneView.m; sourceTree = "<group>"; };
 		6AB860C71965542A00E003D3 /* Polygone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Polygone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB860CA1965542A00E003D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6AB860CC1965542A00E003D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +118,10 @@
 		6AB860D01965542A00E003D3 /* Polygone */ = {
 			isa = PBXGroup;
 			children = (
+				6A809C061965A051009619C5 /* Polygone.h */,
+				6A809C071965A051009619C5 /* Polygone.m */,
+				6AB3D79B19668F060006FB4B /* PolygoneView.h */,
+				6AB3D79C19668F060006FB4B /* PolygoneView.m */,
 				6AB860D91965542A00E003D3 /* AppDelegate.h */,
 				6AB860DA1965542A00E003D3 /* AppDelegate.m */,
 				6AB860DC1965542A00E003D3 /* Main.storyboard */,
@@ -250,7 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB860E41965542A00E003D3 /* ViewController.m in Sources */,
+				6AB3D79D19668F060006FB4B /* PolygoneView.m in Sources */,
 				6AB860DB1965542A00E003D3 /* AppDelegate.m in Sources */,
+				6A809C081965A051009619C5 /* Polygone.m in Sources */,
 				6AB860D71965542A00E003D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

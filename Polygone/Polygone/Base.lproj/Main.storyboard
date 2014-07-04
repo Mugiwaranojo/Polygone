@@ -58,6 +58,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="YCs-Ze-6gk"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeNumberOfside:" destination="vXZ-lx-hvc" eventType="valueChanged" id="hnO-du-5dT"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.41263686131386862" green="0.67638001824817517" blue="0.83160355839416056" alpha="1" colorSpace="calibratedRGB"/>
